@@ -1,0 +1,54 @@
+// ================= MOBILE MENU =================
+
+function toggleMenu() {
+
+    const nav = document.querySelector(".navbar nav");
+
+    if (nav.style.display === "flex") {
+        nav.style.display = "none";
+    } 
+    else {
+        nav.style.display = "flex";
+        nav.style.flexDirection = "column";
+        nav.style.position = "absolute";
+        nav.style.top = "68px";
+        nav.style.left = "0";
+        nav.style.right = "0";
+        nav.style.padding = "25px";
+        nav.style.background = "#271308";
+    }
+
+}
+
+
+// ================= SCROLL EFFECT =================
+
+window.addEventListener("scroll", function() {
+
+    const navbar = document.querySelector(".navbar");
+
+    if (window.scrollY > 50) {
+        navbar.style.boxShadow =
+            "0 5px 30px rgba(0,0,0,0.3)";
+    } 
+    else {
+        navbar.style.boxShadow =
+            "0 5px 25px rgba(0,0,0,0.18)";
+    }
+
+});
+
+
+// ================= GALLERY =================
+
+const galleryImages = document.querySelectorAll(".gallery-item img");
+
+galleryImages.forEach(function(image) {
+
+    image.addEventListener("click", function() {
+
+        image.classList.toggle("zoomed");
+
+    });
+
+});
